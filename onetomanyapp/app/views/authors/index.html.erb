@@ -1,0 +1,13 @@
+<h1>Authors#index</h1>
+<p>Find me in app/views/authors/index.html.erb</p>
+
+<% @authors.each do |author|  %>
+<h2>
+<%= author.name  %>
+<%= link_to author.name, author_path(author) %>
+<!-- THE ABOVE CORRESPONDS TO: -->
+<!-- /authors/:id. to: "authors#show" -->
+</h2>
+<% end  %>
+
+<%= link_to "add a new author", new_author_path %>

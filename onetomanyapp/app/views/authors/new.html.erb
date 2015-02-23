@@ -1,0 +1,23 @@
+<h1>Authors#new</h1>
+<p>Find me in app/views/authors/new.html.erb</p>
+
+<% if @author.errors.any? %>
+  <% @author.errors.full_messages.each do |error| %>
+    <p class="text-danger">
+      <%= error %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= form_for @author do |f| %>
+<p>
+  <%= f.label :name  %>
+  <%= f.text.field :name, autofocus: true  %>
+
+</p>
+<p>
+  <%= f.submit "edit"  %>
+</p>
+<% end  %>
+
+<%= link_to "DELETe", author_path(@author), method: "delete", data: {confirm: "ARE U SURE YO?"}  %>
